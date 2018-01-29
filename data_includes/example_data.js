@@ -2,13 +2,13 @@
 // 
 //   - validate response before allowing continue 
 //   - generate all items 
-
-//var shuffleSequence = seq("consent","intro", randomize(seq(startsWith("IE"),startsWith("SE"),startsWith("WE"))),"questionnaire");
-//var shuffleSequence = seq("intro", "ext1", "ext2", rshuffle(startsWith("shape_"),rshuffle(startsWith("artifact_"))),'questionnaire');
-
+//   - add items to this file 
+//   - add 'consent' after 'intro'
+//   - create consent form 
+//   - create questionnaire 
+//   - clean up this file 
 
 var shuffleSequence = seq("intro", rshuffle(startsWith("shape_"),rshuffle(startsWith("artifact_"))),'questionnaire');
-
 
 
 var practiceItemTypes = ["practice"];
@@ -111,47 +111,78 @@ var items = [
 //         consentMessage: "I agree to participate.",
 //     } ],
 
-
-["shape_item01", "Form", {
-  html: {include: "item_shape_tall.html"}}],
+// OLD EXAMPLES -- WORKING 
+// ["shape_item01", "Form", {
+//   html: {include: "item_shape_tall.html"}}],
                 
-["shape_item02", "Form", {
-  html: {include: "item_shape_striped.html"}}],
+// ["shape_item02", "Form", {
+//   html: {include: "item_shape_striped.html"}}],
                 
-["shape_item03", "Form", {
-  html: {include: "item_shape_full.html"}}],
+// ["shape_item03", "Form", {
+//   html: {include: "item_shape_full.html"}}],
                 
-["artifact_item04", "Form", {
-  html: {include: "item_artifact_tall.html"}}],
+// ["artifact_item04", "Form", {
+//   html: {include: "item_artifact_tall.html"}}],
 
-["artifact_item05", "Form", {
-  html: {include: "item_artifact_striped.html"}}],
+// ["artifact_item05", "Form", {
+//   html: {include: "item_artifact_striped.html"}}],
                 
-["artifact_item06", "Form", {
-  html: {include: "item_artifact_full.html"}}],
+// ["artifact_item06", "Form", {
+//   html: {include: "item_artifact_full.html"}}],
 
 
-// ["ext1", "Form", {
-//   html: {include: "meitem1.html"}}],
-//                 
-// ["ext2", "Form", {
-//   html: {include: "meitem2.html"}}],
+["artifact_empty_full_beer", "Form", {html: {include: "artifact_empty_full_beer.html"}}],
+["artifact_straight_bent_bentnail", "Form", {html: {include: "artifact_straight_bent_bentnail.html"}}],
+["artifact_small_big_boat", "Form", {html: {include: "artifact_small_big_boat.html"}}],
+["artifact_narrow_wide_bridge", "Form", {html: {include: "artifact_narrow_wide_bridge.html"}}],
+["artifact_plain_striped_bw_stripe_fish", "Form", {html: {include: "artifact_plain_striped_bw_stripe_fish.html"}}],
+["artifact_short_tall_candle", "Form", {html: {include: "artifact_short_tall_candle.html"}}],
+["artifact_closed_open_chips", "Form", {html: {include: "artifact_closed_open_chips.html"}}],
+["artifact_straight_curved_curvedbridge", "Form", {html: {include: "artifact_straight_curved_curvedbridge.html"}}],
+["artifact_closed_open_garagedoor", "Form", {html: {include: "artifact_closed_open_garagedoor.html"}}],
+["artifact_plain_spotted_ladybug", "Form", {html: {include: "artifact_plain_spotted_ladybug.html"}}],
+["artifact_thin_thick_marker", "Form", {html: {include: "artifact_thin_thick_marker.html"}}],
+["artifact_short_long_noodle", "Form", {html: {include: "artifact_short_long_noodle.html"}}],
+["artifact_straight_curved_palm", "Form", {html: {include: "artifact_straight_curved_palm.html"}}],
+["artifact_plain_spotted_pillow", "Form", {html: {include: "artifact_plain_spotted_pillow.html"}}],
+["artifact_plain_striped_shirt", "Form", {html: {include: "artifact_plain_striped_shirt.html"}}],
+["artifact_smooth_bumpy_shoe", "Form", {html: {include: "artifact_smooth_bumpy_shoe.html"}}],
+["artifact_small_big_snowman", "Form", {html: {include: "artifact_small_big_snowman.html"}}],
+["artifact_narrow_wide_sofa", "Form", {html: {include: "artifact_narrow_wide_sofa.html"}}],
+["artifact_smooth_bumpy_squash", "Form", {html: {include: "artifact_smooth_bumpy_squash.html"}}],
+["artifact_short_tall_stack", "Form", {html: {include: "artifact_short_tall_stack.html"}}],
+["artifact_straight_bent_straightrod", "Form", {html: {include: "artifact_straight_bent_straightrod.html"}}],
+["artifact_short_long_table", "Form", {html: {include: "artifact_short_long_table.html"}}],
+["artifact_thin_thick_thick", "Form", {html: {include: "artifact_thin_thick_thick.html"}}],
+["artifact_empty_full_trash", "Form", {html: {include: "artifact_empty_full_trash.html"}}],
+["shape_straight_bent_bent_bluearrow", "Form", {html: {include: "shape_straight_bent_bent_bluearrow.html"}}],
+["shape_straight_bent_bent_greenarrow", "Form", {html: {include: "shape_straight_bent_bent_greenarrow.html"}}],
+["shape_small_big_big_redsquare", "Form", {html: {include: "shape_small_big_big_redsquare.html"}}],
+["shape_small_big_big_yellowcircle", "Form", {html: {include: "shape_small_big_big_yellowcircle.html"}}],
+["shape_smooth_bumpy_bumpy_bluesquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_bluesquare.html"}}],
+["shape_smooth_bumpy_bumpy_redsquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_redsquare.html"}}],
+["shape_straight_curved_curved_blueline", "Form", {html: {include: "shape_straight_curved_curved_blueline.html"}}],
+["shape_straight_curved_curved_greenline", "Form", {html: {include: "shape_straight_curved_curved_greenline.html"}}],
+["shape_empty_full_full_cube", "Form", {html: {include: "shape_empty_full_full_cube.html"}}],
+["shape_empty_full_full_greencube", "Form", {html: {include: "shape_empty_full_full_greencube.html"}}],
+["shape_empty_full_full_yellowcube", "Form", {html: {include: "shape_empty_full_full_yellowcube.html"}}],
+["shape_short_long_long_greenarrow", "Form", {html: {include: "shape_short_long_long_greenarrow.html"}}],
+["shape_short_long_long_greenline", "Form", {html: {include: "shape_short_long_long_greenline.html"}}],
+["shape_closed_open_open_bluecircle", "Form", {html: {include: "shape_closed_open_open_bluecircle.html"}}],
+["shape_closed_open_open_redtriangle", "Form", {html: {include: "shape_closed_open_open_redtriangle.html"}}],
+["shape_plain_spotted_spotted_yellowcircle", "Form", {html: {include: "shape_plain_spotted_spotted_yellowcircle.html"}}],
+["shape_plain_spotted_spotted_yellowsquare", "Form", {html: {include: "shape_plain_spotted_spotted_yellowsquare.html"}}],
+["shape_plain_striped_stripedd_redcircle", "Form", {html: {include: "shape_plain_striped_stripedd_redcircle.html"}}],
+["shape_plain_striped_stripedd_yellowsquare", "Form", {html: {include: "shape_plain_striped_stripedd_yellowsquare.html"}}],
+["shape_short_tall_tall_greencylinder", "Form", {html: {include: "shape_short_tall_tall_greencylinder.html"}}],
+["shape_short_tall_tall_greenspiral", "Form", {html: {include: "shape_short_tall_tall_greenspiral.html"}}],
+["shape_thin_thick_thick_bluearrow", "Form", {html: {include: "shape_thin_thick_thick_bluearrow.html"}}],
+["shape_thin_thick_thick_redarrow", "Form", {html: {include: "shape_thin_thick_thick_redarrow.html"}}],
+["shape_narrow_wide_wide_greencircle", "Form", {html: {include: "shape_narrow_wide_wide_greencircle.html"}}],
+["shape_narrow_wide_wide_redcircle", "Form", {html: {include: "shape_narrow_wide_wide_redcircle.html"}}]
 
-                
 
-// ['shape_cube_1', 'Scale2', 
-//    {html:"<p class='Sen1'>Imagine you have a <b>cube</b> in front of you. It could be filled with color, or could have nothing in it. </p><p class='Sen2'><i>How likely do you think it is that the cube is like this one?</i></p><br><img height='250' width='250' src='http://lefft.xyz/img/scale_priors/shape/full_cube1.jpg' alt='smthg is wrong :/'>"}],
-// ['shape_cube_3', 'Scale2', 
-//    {html:"<p class='Sen1'>Imagine you have a <b>cube</b> in front of you. It could be filled with color, or could have nothing in it. </p><p class='Sen2'><i>How likely do you think it is that the cube is like this one?</i></p><br><img height='250' width='250' src='http://lefft.xyz/img/scale_priors/shape/full_cube3.jpg' alt='smthg is wrong :/'>"}],
-// ['shape_cube_5', 'Scale2', 
-//    {html:"<p class='Sen1'>Imagine you have a <b>cube</b> in front of you. It could be filled with color, or could have nothing in it. </p><p class='Sen2'><i>How likely do you think it is that the cube is like this one?</i></p><br><img height='250' width='250' src='http://lefft.xyz/img/scale_priors/shape/full_cube5.jpg' alt='smthg is wrong :/'>"}],
-// ['artifact_beer_1', 'Scale2', 
-//    {html:"<p class='Sen1'>Imagine you have a <b>glass</b> in front of you. It could be filled with beer, or could have nothing in it. </p><p class='Sen2'><i>How likely do you think it is that the glass is like this one?</i></p><br><img height='250' width='250' src='http://lefft.xyz/img/scale_priors/artifact/full_beer1.jpg ' alt='smthg is wrong :/'>"}],
-// ['artifact_beer_3', 'Scale2', 
-//    {html:"<p class='Sen1'>Imagine you have a <b>glass</b> in front of you. It could be filled with beer, or could have nothing in it. </p><p class='Sen2'><i>How likely do you think it is that the glass is like this one?</i></p><br><img height='250' width='250' src='http://lefft.xyz/img/scale_priors/artifact/full_beer3.jpg' alt='smthg is wrong :/'>"}],
-// ['artifact_beer_5', 'Scale2', 
-//    {html:"<p class='Sen1'>Imagine you have a <b>glass</b> in front of you. It could be filled with beer, or could have nothing in it. </p><p class='Sen2'><i>How likely do you think it is that the glass is like this one?</i></p><br><img height='250' width='250' src='http://lefft.xyz/img/scale_priors/artifact/full_beer5.jpg' alt='smthg is wrong :/'>"}]                  
-                
+
  ];
 
 
