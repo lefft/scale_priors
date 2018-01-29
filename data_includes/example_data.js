@@ -7,6 +7,11 @@
 //   - create consent form 
 //   - create questionnaire 
 //   - clean up this file 
+//   - fix problem with `full_cube2.jpg` (needs to be colors etc.)
+//   - fix problem w green ovals/circles (wide shd be towards right side)
+//   - 
+//   - 
+
 
 var shuffleSequence = seq("intro", rshuffle(startsWith("shape_"),rshuffle(startsWith("artifact_"))),'questionnaire');
 
