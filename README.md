@@ -52,7 +52,8 @@
 ###### small/misc 
 - [ ] correct long-existing misspellings in fnames?? 
 - [ ] update ck/mx on state of thangze 
-
+- [ ] should 'squash' noun be 'gourd'??? 
+- [ ] bigger font/underline/emphasis on "**a noun**" in prompt
 
 
 
