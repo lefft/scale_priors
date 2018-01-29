@@ -132,12 +132,13 @@ items %>% glimpse
 
 
 logze <- sapply(1:nrow(items), function(idx){
-  fill_template(items[idx, ], out_dir="chunk_includes/items/")
+  fill_template(items[idx, ], out_dir="chunk_includes/")
 })
 
 
 sapply(1:nrow(items), function(idx){
-  make_ibex_item_json(items[idx, ], path_from_chunk_includes="items")
+  # make sure to include "/" in dir name in `path_from_chunk_includes` !!! 
+  make_ibex_item_json(items[idx, ], path_from_chunk_includes="")
 }) %>% paste(collapse="\n\t") %>% paste0("{\n\t", ., "\n}") %>% 
   writeLines("ibex_items.json")
 
