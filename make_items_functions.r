@@ -58,9 +58,10 @@ fill_template <- function(item, out_dir){
 
 # ["shape_item01", "Form", {
 #   html: {include: "item_shape_tall.html"}}],
-make_ibex_item_json <- function(item){
+make_ibex_item_json <- function(item, path_from_chunk_includes=""){
   paste0('[\"', item$group_id, '\", \"Form\", ',
-         '{html: {include: \"', item$group_id, '.html\"}}],')
+         '{html: {include: \"', path_from_chunk_includes, '/', 
+         item$group_id, '.html\"}}],')
 }
 
 

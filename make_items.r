@@ -1,26 +1,7 @@
 lefftpack::lazy_setup()
 source("make_items_functions.r")
-# TODO (see `example_data.js` for more issues): 
-#   x- func to take values of `slots`, write an html item 
-#   x- func taking item descript, getting appropriate slot values 
-#   x- generate items from design params 
-#   x- apply func to all of the items 
-#   x- put online for testing 
-# 
-### OUTLINE OF WHAT TO DO + HOW TO DO IT 
-#  x1.  make html template w slots to be filled in 
-#  x2.  get df w nrows equal to number of items 
-#  x3.  write func to inject template w rows of df 
-#  x4.  apply func to all rows of the df 
-#  x5.  put img online 
-#  x6.  put html on ibex 
-#  x7.  write json objs for ibex items 
-#   8.  fix small issues here and there 
-#   9.  test + inspect 'results' format  
-#  10.  send to ck/ming
 
-
-img_path <- "~/Google Drive/sandboxxxe/website_repo/img/scale_priors/" 
+img_path <- "/Users/timothyleffel/Google Drive/sandboxxxe/website_repo/img/scale_priors/" 
 img_types <- c("artifact", "shape")
 
 item_elements <- lapply(img_types, function(cond){
@@ -79,8 +60,8 @@ item_elements <- lapply(img_types, function(cond){
     img_group == "tall_greenspiral" ~ "short_tall",
     img_group == "thick_bluearrow" ~ "thin_thick",
     img_group == "thick_redarrow" ~ "thin_thick",
-    img_group == "wide_greencircle" ~ "narrow_wide",
-    img_group == "wide_redcircle" ~ "narrow_wide",
+    img_group == "wide_greenoval" ~ "narrow_wide",
+    img_group == "wide_redoval" ~ "narrow_wide",
     TRUE ~ NA_character_)) %>% 
   mutate(noun = case_when(
     img_group == "beer" ~ "a beer cup", 
@@ -131,8 +112,8 @@ item_elements <- lapply(img_types, function(cond){
     img_group == "tall_greenspiral" ~ "a spiral",
     img_group == "thick_bluearrow" ~ "an arrow",
     img_group == "thick_redarrow" ~ "an arrow",
-    img_group == "wide_greencircle" ~ "an oval",
-    img_group == "wide_redcircle" ~ "an oval",
+    img_group == "wide_greenoval" ~ "an oval",
+    img_group == "wide_redoval" ~ "an oval",
     TRUE ~ NA_character_)) %>% 
   mutate(img_id = paste(img_type, adjs, gsub("\\.jpg", "", img), sep="_")) %>% 
   mutate(group_id = paste(img_type, adjs, img_group, sep="_"))
@@ -151,12 +132,14 @@ items %>% glimpse
 
 
 logze <- sapply(1:nrow(items), function(idx){
-  fill_template(items[idx, ], out_dir="chunk_includes/")
+  fill_template(items[idx, ], out_dir="chunk_includes/items/")
 })
 
 
-sapply(1:nrow(items), function(idx) make_ibex_item_json(items[idx, ])) %>% 
-  paste(collapse="\n") %>% writeLines("ibex_items.json")
+sapply(1:nrow(items), function(idx){
+  make_ibex_item_json(items[idx, ], path_from_chunk_includes="items")
+}) %>% paste(collapse="\n\t") %>% paste0("{\n\t", ., "\n}") %>% 
+  writeLines("ibex_items.json")
 
 
 

@@ -1,20 +1,4 @@
-// TODO
-// 
-//   - validate response before allowing continue 
-//   - generate all items 
-//   - add items to this file 
-//   - add 'consent' after 'intro'
-//   - create consent form 
-//   - create questionnaire 
-//   - clean up this file 
-//   - fix problem with `full_cube2.jpg` (needs to be colors etc.)
-//   - fix problem w green ovals/circles (wide shd be towards right side)
-//   - 
-//   - 
-
-
 var shuffleSequence = seq("intro", rshuffle(startsWith("shape_"),rshuffle(startsWith("artifact_"))),'questionnaire');
-
 
 var practiceItemTypes = ["practice"];
 
@@ -136,57 +120,54 @@ var items = [
 //   html: {include: "item_artifact_full.html"}}],
 
 
-["artifact_empty_full_beer", "Form", {html: {include: "artifact_empty_full_beer.html"}}],
-["artifact_straight_bent_bentnail", "Form", {html: {include: "artifact_straight_bent_bentnail.html"}}],
-["artifact_small_big_boat", "Form", {html: {include: "artifact_small_big_boat.html"}}],
-["artifact_narrow_wide_bridge", "Form", {html: {include: "artifact_narrow_wide_bridge.html"}}],
-["artifact_plain_striped_bw_stripe_fish", "Form", {html: {include: "artifact_plain_striped_bw_stripe_fish.html"}}],
-["artifact_short_tall_candle", "Form", {html: {include: "artifact_short_tall_candle.html"}}],
-["artifact_closed_open_chips", "Form", {html: {include: "artifact_closed_open_chips.html"}}],
-["artifact_straight_curved_curvedbridge", "Form", {html: {include: "artifact_straight_curved_curvedbridge.html"}}],
-["artifact_closed_open_garagedoor", "Form", {html: {include: "artifact_closed_open_garagedoor.html"}}],
-["artifact_plain_spotted_ladybug", "Form", {html: {include: "artifact_plain_spotted_ladybug.html"}}],
-["artifact_thin_thick_marker", "Form", {html: {include: "artifact_thin_thick_marker.html"}}],
-["artifact_short_long_noodle", "Form", {html: {include: "artifact_short_long_noodle.html"}}],
-["artifact_straight_curved_palm", "Form", {html: {include: "artifact_straight_curved_palm.html"}}],
-["artifact_plain_spotted_pillow", "Form", {html: {include: "artifact_plain_spotted_pillow.html"}}],
-["artifact_plain_striped_shirt", "Form", {html: {include: "artifact_plain_striped_shirt.html"}}],
-["artifact_smooth_bumpy_shoe", "Form", {html: {include: "artifact_smooth_bumpy_shoe.html"}}],
-["artifact_small_big_snowman", "Form", {html: {include: "artifact_small_big_snowman.html"}}],
-["artifact_narrow_wide_sofa", "Form", {html: {include: "artifact_narrow_wide_sofa.html"}}],
-["artifact_smooth_bumpy_squash", "Form", {html: {include: "artifact_smooth_bumpy_squash.html"}}],
-["artifact_short_tall_stack", "Form", {html: {include: "artifact_short_tall_stack.html"}}],
-["artifact_straight_bent_straightrod", "Form", {html: {include: "artifact_straight_bent_straightrod.html"}}],
-["artifact_short_long_table", "Form", {html: {include: "artifact_short_long_table.html"}}],
-["artifact_thin_thick_thick", "Form", {html: {include: "artifact_thin_thick_thick.html"}}],
-["artifact_empty_full_trash", "Form", {html: {include: "artifact_empty_full_trash.html"}}],
-["shape_straight_bent_bent_bluearrow", "Form", {html: {include: "shape_straight_bent_bent_bluearrow.html"}}],
-["shape_straight_bent_bent_greenarrow", "Form", {html: {include: "shape_straight_bent_bent_greenarrow.html"}}],
-["shape_small_big_big_redsquare", "Form", {html: {include: "shape_small_big_big_redsquare.html"}}],
-["shape_small_big_big_yellowcircle", "Form", {html: {include: "shape_small_big_big_yellowcircle.html"}}],
-["shape_smooth_bumpy_bumpy_bluesquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_bluesquare.html"}}],
-["shape_smooth_bumpy_bumpy_redsquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_redsquare.html"}}],
-["shape_straight_curved_curved_blueline", "Form", {html: {include: "shape_straight_curved_curved_blueline.html"}}],
-["shape_straight_curved_curved_greenline", "Form", {html: {include: "shape_straight_curved_curved_greenline.html"}}],
-["shape_empty_full_full_cube", "Form", {html: {include: "shape_empty_full_full_cube.html"}}],
-["shape_empty_full_full_greencube", "Form", {html: {include: "shape_empty_full_full_greencube.html"}}],
-["shape_empty_full_full_yellowcube", "Form", {html: {include: "shape_empty_full_full_yellowcube.html"}}],
-["shape_short_long_long_greenarrow", "Form", {html: {include: "shape_short_long_long_greenarrow.html"}}],
-["shape_short_long_long_greenline", "Form", {html: {include: "shape_short_long_long_greenline.html"}}],
-["shape_closed_open_open_bluecircle", "Form", {html: {include: "shape_closed_open_open_bluecircle.html"}}],
-["shape_closed_open_open_redtriangle", "Form", {html: {include: "shape_closed_open_open_redtriangle.html"}}],
-["shape_plain_spotted_spotted_yellowcircle", "Form", {html: {include: "shape_plain_spotted_spotted_yellowcircle.html"}}],
-["shape_plain_spotted_spotted_yellowsquare", "Form", {html: {include: "shape_plain_spotted_spotted_yellowsquare.html"}}],
-["shape_plain_striped_stripedd_redcircle", "Form", {html: {include: "shape_plain_striped_stripedd_redcircle.html"}}],
-["shape_plain_striped_stripedd_yellowsquare", "Form", {html: {include: "shape_plain_striped_stripedd_yellowsquare.html"}}],
-["shape_short_tall_tall_greencylinder", "Form", {html: {include: "shape_short_tall_tall_greencylinder.html"}}],
-["shape_short_tall_tall_greenspiral", "Form", {html: {include: "shape_short_tall_tall_greenspiral.html"}}],
-["shape_thin_thick_thick_bluearrow", "Form", {html: {include: "shape_thin_thick_thick_bluearrow.html"}}],
-["shape_thin_thick_thick_redarrow", "Form", {html: {include: "shape_thin_thick_thick_redarrow.html"}}],
-["shape_narrow_wide_wide_greencircle", "Form", {html: {include: "shape_narrow_wide_wide_greencircle.html"}}],
-["shape_narrow_wide_wide_redcircle", "Form", {html: {include: "shape_narrow_wide_wide_redcircle.html"}}]
-
-
+["artifact_empty_full_beer", "Form", {html: {include: "items/artifact_empty_full_beer.html"}}],
+    ["artifact_straight_bent_bentnail", "Form", {html: {include: "items/artifact_straight_bent_bentnail.html"}}],
+    ["artifact_small_big_boat", "Form", {html: {include: "items/artifact_small_big_boat.html"}}],
+    ["artifact_narrow_wide_bridge", "Form", {html: {include: "items/artifact_narrow_wide_bridge.html"}}],
+    ["artifact_plain_striped_bw_stripe_fish", "Form", {html: {include: "items/artifact_plain_striped_bw_stripe_fish.html"}}],
+    ["artifact_short_tall_candle", "Form", {html: {include: "items/artifact_short_tall_candle.html"}}],
+    ["artifact_closed_open_chips", "Form", {html: {include: "items/artifact_closed_open_chips.html"}}],
+    ["artifact_straight_curved_curvedbridge", "Form", {html: {include: "items/artifact_straight_curved_curvedbridge.html"}}],
+    ["artifact_closed_open_garagedoor", "Form", {html: {include: "items/artifact_closed_open_garagedoor.html"}}],
+    ["artifact_plain_spotted_ladybug", "Form", {html: {include: "items/artifact_plain_spotted_ladybug.html"}}],
+    ["artifact_thin_thick_marker", "Form", {html: {include: "items/artifact_thin_thick_marker.html"}}],
+    ["artifact_short_long_noodle", "Form", {html: {include: "items/artifact_short_long_noodle.html"}}],
+    ["artifact_straight_curved_palm", "Form", {html: {include: "items/artifact_straight_curved_palm.html"}}],
+    ["artifact_plain_spotted_pillow", "Form", {html: {include: "items/artifact_plain_spotted_pillow.html"}}],
+    ["artifact_plain_striped_shirt", "Form", {html: {include: "items/artifact_plain_striped_shirt.html"}}],
+    ["artifact_smooth_bumpy_shoe", "Form", {html: {include: "items/artifact_smooth_bumpy_shoe.html"}}],
+    ["artifact_small_big_snowman", "Form", {html: {include: "items/artifact_small_big_snowman.html"}}],
+    ["artifact_narrow_wide_sofa", "Form", {html: {include: "items/artifact_narrow_wide_sofa.html"}}],
+    ["artifact_smooth_bumpy_squash", "Form", {html: {include: "items/artifact_smooth_bumpy_squash.html"}}],
+    ["artifact_short_tall_stack", "Form", {html: {include: "items/artifact_short_tall_stack.html"}}],
+    ["artifact_straight_bent_straightrod", "Form", {html: {include: "items/artifact_straight_bent_straightrod.html"}}],
+    ["artifact_short_long_table", "Form", {html: {include: "items/artifact_short_long_table.html"}}],
+    ["artifact_thin_thick_thick", "Form", {html: {include: "items/artifact_thin_thick_thick.html"}}],
+    ["artifact_empty_full_trash", "Form", {html: {include: "items/artifact_empty_full_trash.html"}}],
+    ["shape_straight_bent_bent_bluearrow", "Form", {html: {include: "items/shape_straight_bent_bent_bluearrow.html"}}],
+    ["shape_straight_bent_bent_greenarrow", "Form", {html: {include: "items/shape_straight_bent_bent_greenarrow.html"}}],
+    ["shape_small_big_big_redsquare", "Form", {html: {include: "items/shape_small_big_big_redsquare.html"}}],
+    ["shape_small_big_big_yellowcircle", "Form", {html: {include: "items/shape_small_big_big_yellowcircle.html"}}],
+    ["shape_smooth_bumpy_bumpy_bluesquare", "Form", {html: {include: "items/shape_smooth_bumpy_bumpy_bluesquare.html"}}],
+    ["shape_smooth_bumpy_bumpy_redsquare", "Form", {html: {include: "items/shape_smooth_bumpy_bumpy_redsquare.html"}}],
+    ["shape_straight_curved_curved_blueline", "Form", {html: {include: "items/shape_straight_curved_curved_blueline.html"}}],
+    ["shape_straight_curved_curved_greenline", "Form", {html: {include: "items/shape_straight_curved_curved_greenline.html"}}],
+    ["shape_empty_full_full_greencube", "Form", {html: {include: "items/shape_empty_full_full_greencube.html"}}],
+    ["shape_empty_full_full_yellowcube", "Form", {html: {include: "items/shape_empty_full_full_yellowcube.html"}}],
+    ["shape_short_long_long_greenarrow", "Form", {html: {include: "items/shape_short_long_long_greenarrow.html"}}],
+    ["shape_short_long_long_greenline", "Form", {html: {include: "items/shape_short_long_long_greenline.html"}}],
+    ["shape_closed_open_open_bluecircle", "Form", {html: {include: "items/shape_closed_open_open_bluecircle.html"}}],
+    ["shape_closed_open_open_redtriangle", "Form", {html: {include: "items/shape_closed_open_open_redtriangle.html"}}],
+    ["shape_plain_spotted_spotted_yellowcircle", "Form", {html: {include: "items/shape_plain_spotted_spotted_yellowcircle.html"}}],
+    ["shape_plain_spotted_spotted_yellowsquare", "Form", {html: {include: "items/shape_plain_spotted_spotted_yellowsquare.html"}}],
+    ["shape_plain_striped_stripedd_redcircle", "Form", {html: {include: "items/shape_plain_striped_stripedd_redcircle.html"}}],
+    ["shape_plain_striped_stripedd_yellowsquare", "Form", {html: {include: "items/shape_plain_striped_stripedd_yellowsquare.html"}}],
+    ["shape_short_tall_tall_greencylinder", "Form", {html: {include: "items/shape_short_tall_tall_greencylinder.html"}}],
+    ["shape_short_tall_tall_greenspiral", "Form", {html: {include: "items/shape_short_tall_tall_greenspiral.html"}}],
+    ["shape_thin_thick_thick_bluearrow", "Form", {html: {include: "items/shape_thin_thick_thick_bluearrow.html"}}],
+    ["shape_thin_thick_thick_redarrow", "Form", {html: {include: "items/shape_thin_thick_thick_redarrow.html"}}],
+    ["shape_narrow_wide_wide_greenoval", "Form", {html: {include: "items/shape_narrow_wide_wide_greenoval.html"}}],
+    ["shape_narrow_wide_wide_redoval", "Form", {html: {include: "items/shape_narrow_wide_wide_redoval.html"}}]
 
  ];
 
