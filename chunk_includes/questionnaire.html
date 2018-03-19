@@ -1,41 +1,93 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style type="text/css">
-  
-  table{
-    margin:auto;
-  }
-  img.whatever
-  {
-    padding:0px;
-    margin:0px;
-    border:0px;
-    height:0px;
-    width:1px;
-    display:block;
-  }
-  img.PlayCard
-  {
-    width:69px;
-    height:100px;
-  }
-  
-</style>
-  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+    table {
+      margin:auto;
+    }
+    img.whatever {
+      padding:0px;
+      margin:0px;
+      border:0px;
+      height:0px;
+      width:1px;
+      display:block;
+    }
+    img.PlayCard {
+      width:69px;
+      height:100px;
+    }
+  </style>
 </head>
-  
+
+
+<body>
   <div style="width: 45em; margin-top:5em">
 <!--  <h2  style="text-align:center;margin-bottom:50px">Hello, and thank you for your participation!</h2> -->
+    <p>
+      To finish up, please answer the questions below.
+    </p>
+
+    <p>
+      <b>After submitting, please wait until the results are sent to the server (you'll see a message once they're sent). We may not receive your data otherwise.</b>
+    </p>
+    <br>
+    
+    <table>
+      <tbody>
+        <!-- AGE QUESTION -->
+        <tr>
+          <td>What is your age (in years)?</td>
+          <td><input name="age" type="text" size="30"></td>
+        </tr>
+        <!-- SEX QUESTION -->
+        <tr>
+          <td>What is your sex?</td>
+          <td>
+            <br><input name="sex" type="radio" value="Male" class="obligatory" id="male"><label for="sex_gender">Male </label>
+            <br><input name="pokemon" type="radio" value="Female" class="obligatory" id="female"><label for="sex_gender">Female </label>
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><label class="error" for="sex"></label><hr></td>
+        </tr>
+        <!-- NATIVE LANGUAGE QUESTION -->
+        <tr>
+          <td>What is your native language?</td>
+          <td><input name="age" type="text" size="30"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label class="error" for="age"></label><hr></td>
+        </tr>
+        <!-- HOME STATE QUESTION -->
+        <tr>
+          <td>If you grew up in the USA, what state did you grow up in?<br> (you can type "none")</td>
+          <td><input name="state" type="text" size="30" class="obligatory"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label class="error" for="state"></label><hr></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</body>
+</html>
+
+
+
    
  
 
-<hr />
-  <p style="text-align:justify;font-size:1.125em">
+<!-- <hr><p style="text-align:justify;font-size:1.125em">
 that's all, folks.
-  </p>
-<hr />
+</p><hr>
+ -->
 
 </div>
 
-  

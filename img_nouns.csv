@@ -1,0 +1,59 @@
+img_group,noun_indef,noun_pl
+# TODO beer appears twice, once from test run -- remove when safe
+beer,a beer cup,beer cups
+bentnail,a nail,nails
+boat,a boat,boats
+bridge,a bridge,bridges
+bw_stripe_fish,a fish,fish
+candle,a candle,candles
+chips,a bag of chips,bags of chips
+# check 
+curvedbridge,a bridge,bridges
+full_beer,a beer cup,beer cups
+garagedoor,a garage door,garage doors
+ladybug,a ladybug,ladybugs
+marker,a marker,markers
+noodle,a noodle,noodles
+palm,a palm tree,palm trees
+pillow,a pillow,pillows
+shirt,a t-shirt,t-shirts
+# shapes items weird 
+shoe,a shoe sole,shoe soles
+snowman,a snowman,snowmen
+sofa,a couch,couches
+# shapes items weird 
+squash,a squash,squashes
+stack,a stack of books,stacks of books
+straightrod,a metal bar,metal bars
+table,an end table,end tables
+thick,a book,books
+trash,a dumpster,dumpster
+bent_bluearrow,an arrow,arrows
+bent_greenarrow,an arrow,arrows
+big_redsquare,a square,squares
+big_yellowcircle,a circle,circles
+# or flat
+bumpy_bluesquare,a square,squares
+# or flat 
+bumpy_redsquare,a square,squares
+curved_blueline,a line,lines
+curved_greenline,a line,lines
+full_cube,a cube,cubes
+full_greencube,a cube,cubes
+full_yellowcube,a cube,cubes
+long_greenarrow,an arrow,arrows
+long_greenline,a line,lines
+open_bluecircle,a circle,circles
+open_redtriangle,a triangle,triangles
+spotted_yellowcircle,a circle,circles
+spotted_yellowsquare,a square,squares
+# misspelling 
+stripedd_redcircle,a circle,circles
+# misspelling 
+stripedd_yellowsquare,a square,square
+tall_greencylinder,a cylinder,cylinder
+tall_greenspiral,a spiral,spirals
+thick_bluearrow,an arrow,arrows
+thick_redarrow,an arrow,arrows
+wide_greenoval,an oval,ovals
+wide_redoval,an oval,ovals

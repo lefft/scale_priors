@@ -1,14 +1,11 @@
-var shuffleSequence = seq("intro", rshuffle(startsWith("shape_"),rshuffle(startsWith("artifact_"))),'questionnaire');
+var shuffleSequence = seq("intro", rshuffle(startsWith("shape_"), rshuffle(startsWith("artifact_"))), 'questionnaire');
 
 var practiceItemTypes = ["practice"];
 
 var showProgressBar = false;
 var pageTitle = "Mechanical Turk Experiment";
-var completionMessage = "all good, thx";
-//    "The results were successfully sent to the server. You can now validate your participation on Mechanical Turk. Thanks!";
-var completionErrorMessage = "something went wrong";
-//    "There was an error sending the results to the server. 
-//    Do not refresh this page. Check your internet connection and when it is up again, try sending the results again. ";
+var completionMessage = "all good, thx"; // "The results were successfully sent to the server. You can now validate your participation on Mechanical Turk. Thanks!";
+var completionErrorMessage = "something went wrong"; // "There was an error sending the results to the server. 
 
 var defaults = [
     "Separator", {
@@ -63,61 +60,23 @@ var defaults = [
 
 var items = [
 
-
-
     ["sep", "Separator", { }],
     ["sepFB", "Separator", {normalMessage:"Correct",errorMessage:"Wrong",transfer:1500,ignoreFailure:false}],
 
-    // New in Ibex 0.3-beta19. You can now determine the point in the experiment at which the counter
-    // for latin square designs will be updated. (Previously, this was always updated upon completion
-    // of the experiment.) To do this, insert the special '__SetCounter__' controller at the desired
-    // point in your running order. If given no options, the counter is incremented by one. If given
-    // an 'inc' option, the counter is incremented by the specified amount. If given a 'set' option,
-    // the counter is set to the given number. (E.g., { set: 100 }, { inc: -1 })
-    //
-    //["setcounter", "__SetCounter__", { }],
-
-    // NOTE: You could also use the 'Message' controller for the experiment intro (this provides a simple
-    // consent checkbox).
+    // NOTE: You could also use the 'Message' controller for the experiment intro 
+    // (this provides a simple consent checkbox).
 
     ["intro", "Form", {
-        html: { include: "instructions.html" },
+        html: {include: "instructions.html"},
         validators: {
             age: function (s) { if (s.match(/^\d+$/)) return true; else return "Bad value for \u2018age\u2019"; }
         }
-    } ],
-                
-                ["questionnaire", "Form", {
-        html: { include: "questionnaire.html" },
+    }],
+
+    ["questionnaire", "Form", {
+        html: {include: "questionnaire.html"},
         continueMessage: "click here to finish"
-    } ],
-    
-//    ["consent", "Message", {
-//         html: { include: "consent.html" },
-//         transfer: "click",
-//         consentRequired: true,
-//         continueMessage: "Click here to start the experiment",
-//         consentMessage: "I agree to participate.",
-//     } ],
-
-// OLD EXAMPLES -- WORKING 
-// ["shape_item01", "Form", {
-//   html: {include: "item_shape_tall.html"}}],
-                
-// ["shape_item02", "Form", {
-//   html: {include: "item_shape_striped.html"}}],
-                
-// ["shape_item03", "Form", {
-//   html: {include: "item_shape_full.html"}}],
-                
-// ["artifact_item04", "Form", {
-//   html: {include: "item_artifact_tall.html"}}],
-
-// ["artifact_item05", "Form", {
-//   html: {include: "item_artifact_striped.html"}}],
-                
-// ["artifact_item06", "Form", {
-//   html: {include: "item_artifact_full.html"}}],
+    }],
 
 
     ["artifact_empty_full_beer", "Form", {html: {include: "artifact_empty_full_beer.html"}}],
@@ -167,7 +126,9 @@ var items = [
     ["shape_thin_thick_thick_bluearrow", "Form", {html: {include: "shape_thin_thick_thick_bluearrow.html"}}],
     ["shape_thin_thick_thick_redarrow", "Form", {html: {include: "shape_thin_thick_thick_redarrow.html"}}],
     ["shape_narrow_wide_wide_greenoval", "Form", {html: {include: "shape_narrow_wide_wide_greenoval.html"}}],
-    ["shape_narrow_wide_wide_redoval", "Form", {html: {include: "shape_narrow_wide_wide_redoval.html"}}],
+    ["shape_narrow_wide_wide_redoval", "Form", {html: {include: "shape_narrow_wide_wide_redoval.html"}}]
+
+
 
 
  ];

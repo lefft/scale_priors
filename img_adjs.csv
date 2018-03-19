@@ -1,0 +1,59 @@
+img_group,adjs,rel_abs
+# TODO beer appears twice, once from test run -- remove when safe
+beer,empty_full,abs
+bentnail,straight_bent,abs
+boat,small_big,rel
+bridge,narrow_wide,rel
+bw_stripe_fish,plain_striped,abs
+candle,short_tall,rel
+chips,closed_open,abs
+# check
+curvedbridge,straight_curved,abs
+full_beer,empty_full,abs
+garagedoor,closed_open,abs
+ladybug,plain_spotted,abs
+marker,thin_thick,rel
+noodle,short_long,rel
+palm,straight_curved,abs
+pillow,plain_spotted,abs
+shirt,plain_striped,abs
+# shapes items weird 
+shoe,smooth_bumpy,abs
+snowman,small_big,rel
+sofa,narrow_wide,rel
+# shapes items weird 
+squash,smooth_bumpy,abs
+stack,short_tall,rel
+straightrod,straight_bent,abs
+table,short_long,rel
+thick,thin_thick,rel
+trash,empty_full,abs
+bent_bluearrow,straight_bent,abs
+bent_greenarrow,straight_bent,abs
+big_redsquare,small_big,rel
+big_yellowcircle,small_big,rel
+# or flat  
+bumpy_bluesquare,smooth_bumpy,abs
+# or flat 
+bumpy_redsquare,smooth_bumpy,abs
+curved_blueline,straight_curved,abs
+curved_greenline,straight_curved,abs
+full_cube,empty_full,abs
+full_greencube,empty_full,abs
+full_yellowcube,empty_full,abs
+long_greenarrow,short_long,rel
+long_greenline,short_long,rel
+open_bluecircle,closed_open,abs
+open_redtriangle,closed_open,abs
+spotted_yellowcircle,plain_spotted,abs
+spotted_yellowsquare,plain_spotted,abs
+# misspelling
+stripedd_redcircle,plain_striped,abs
+# misspelling 
+stripedd_yellowsquare,plain_striped,abs
+tall_greencylinder,short_tall,rel
+tall_greenspiral,short_tall,rel
+thick_bluearrow,thin_thick,rel
+thick_redarrow,thin_thick,rel
+wide_greenoval,narrow_wide,rel
+wide_redoval,narrow_wide,rel
