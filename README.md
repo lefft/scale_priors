@@ -127,7 +127,6 @@
 
 
 ### CORRESPONDENCE PASTED MARCH 12 
-In this experiment, you will see arrays of objects on the screen. For each array, look at all of the objects, and then choose one. 
 
 
 
