@@ -40,14 +40,17 @@
         <!-- AGE QUESTION -->
         <tr>
           <td>What is your age (in years)?</td>
-          <td><input name="age" type="text" size="30"></td>
+          <td><input name="age" type="text" class="obligatory" size="30"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label class="error" for="age"></label><hr></td>
         </tr>
         <!-- SEX QUESTION -->
         <tr>
           <td>What is your sex?</td>
           <td>
             <br><input name="sex" type="radio" value="Male" class="obligatory" id="male"><label for="sex_gender">Male </label>
-            <br><input name="pokemon" type="radio" value="Female" class="obligatory" id="female"><label for="sex_gender">Female </label>
+            <br><input name="sex" type="radio" value="Female" class="obligatory" id="female"><label for="sex_gender">Female </label>
             <br>
           </td>
         </tr>
@@ -57,10 +60,10 @@
         <!-- NATIVE LANGUAGE QUESTION -->
         <tr>
           <td>What is your native language?</td>
-          <td><input name="age" type="text" size="30"></td>
+          <td><input name="lang" type="text" class="obligatory" size="30"></td>
         </tr>
         <tr>
-          <td colspan="2"><label class="error" for="age"></label><hr></td>
+          <td colspan="2"><label class="error" for="lang"></label><hr></td>
         </tr>
         <!-- HOME STATE QUESTION -->
         <tr>
