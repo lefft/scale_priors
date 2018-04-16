@@ -1,4 +1,4 @@
-var shuffleSequence = seq('consent', 'intro', rshuffle(startsWith('shape_'), startsWith('artifact_')), 'questionnaire', 'exit');
+var shuffleSequence = seq('consent', 'intro', rshuffle(rshuffle(startsWith('shape_')), rshuffle(startsWith('artifact_'))), 'questionnaire', 'exit');
 
 
 var showProgressBar = false;
