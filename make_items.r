@@ -79,7 +79,8 @@ item_elements %>% group_by(adjs, rel_abs) %>% summarize(
 # items %>% glimpse
 items <- item_elements %>% select(-group_element, -img, -img_id) %>% unique
 
-
+# add 'item_' prefix for better randomization in ibex
+items$group_id <- paste0("item_", items$group_id)
 
 
 ### generate static html doc for each item ------------------------------------
