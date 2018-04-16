@@ -89,7 +89,9 @@ items <- item_elements %>% select(-group_element, -img, -img_id) %>% unique
 
 # NOTE: the resulting matrix is not really used for anything
 ibex_setup_grid <- do.call(rbind, sapply(seq_len(nrow(items)), function(idx){
-  fill_template(items[idx, ], out_dir=item_html_out_dir)}))
+  fill_template(items[idx, ], 
+                out_dir=item_html_out_dir, 
+                template_fname="item_template-nonoun.html")}))
 
 
 

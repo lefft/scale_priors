@@ -41,10 +41,10 @@ inject_html <- function(item, slots, template){
 }
 
 
-fill_template <- function(item, out_dir){
+fill_template <- function(item, out_dir, template_fname){
   outfile <- file.path(out_dir, paste0(item$group_id, ".html"))
   # TODO -- clean up this interface (not that important tho)
-  template <- paste(readLines("item_template.html"), collapse="\n") 
+  template <- paste(readLines(template_fname), collapse="\n") 
   slots <- item_to_slots(item)
   template_filled <- inject_html(item, slots, template)
   # TODO -- clean up this too (also not that important)
