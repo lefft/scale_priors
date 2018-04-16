@@ -1,11 +1,13 @@
 var shuffleSequence = seq('consent', 'intro', rshuffle(startsWith('shape_'), rshuffle(startsWith('artifact_'))), 'questionnaire', 'exit');
 
-var practiceItemTypes = ["practice"];
 
 var showProgressBar = false;
 var pageTitle = "Mechanical Turk Experiment";
-var completionMessage = "your results have been submitted -- thank you!"; // "The results were successfully sent to the server. You can now validate your participation on Mechanical Turk. Thanks!";
-var completionErrorMessage = "something went wrong"; // "There was an error sending the results to the server. 
+// "The results were successfully sent to the server. 
+// You can now validate your participation on Mechanical Turk. Thanks!"
+var completionMessage = "your results have been submitted -- thank you!"; 
+// "There was an error sending the results to the server. 
+var completionErrorMessage = "something went wrong"; 
 
 var defaults = [
     "Separator", {
@@ -13,39 +15,6 @@ var defaults = [
         normalMessage: "+",
         errorMessage: "+",
         ignoreFailure: true
-    },
-    "SeparatorTer", {
-        normalTransfer: 350,
-        errorTransfer: 1000,
-        normalMessage: "Correct!",
-        errorMessage: "Wrong!",
-        ignoreFailure: false
-    },
-    "SeparatorBis", {
-        normalTransfer: 350,
-        errorTransfer: 1000,
-        normalMessage: "+",
-        errorMessage: "+",
-        ignoreFailure: true
-    },
-    "Scale2", {
-        //scaleWidth: 1000,
-        scaleHeight: 15,
-        handleWidth: 15,
-        handleHeight: 40, //-- the width/height of the "handle" which the user slides along the bar.
-        //html -- html displayed above the bar (probably specifying the sentence to be rated, in most cases).
-        startColor: "#00A0F0",
-        endColor: "#00A0F0",
-        startValue: 0,
-        endValue: 100,
-        decimalPlaces: 0,
-        scaleLabels: true,
-        LeftLab: "← less likely", // ⇦ &#8678; 
-        RightLab: "more likely →", // &#8680;" 
-    },
-    "DashedSentence", {
-        mode: "speeded acceptability",
-        display: "in place"
     },
     "Message", {
         hideProgressBar: false,
@@ -61,7 +30,6 @@ var defaults = [
 var items = [
 
     ["sep", "Separator", { }],
-    ["sepFB", "Separator", {normalMessage:"Correct",errorMessage:"Wrong",transfer:1500,ignoreFailure:false}],
 
     ["consent", "Form", {
         consentRequired: true,
@@ -91,57 +59,55 @@ var items = [
 
     ["artifact_empty_full_beer", "Form", {html: {include: "artifact_empty_full_beer.html"}}],
     ["artifact_straight_bent_bentnail", "Form", {html: {include: "artifact_straight_bent_bentnail.html"}}],
-    // ["artifact_small_big_boat", "Form", {html: {include: "artifact_small_big_boat.html"}}],
-    // ["artifact_narrow_wide_bridge", "Form", {html: {include: "artifact_narrow_wide_bridge.html"}}],
-    // ["artifact_plain_striped_bw_stripe_fish", "Form", {html: {include: "artifact_plain_striped_bw_stripe_fish.html"}}],
-    // ["artifact_short_tall_candle", "Form", {html: {include: "artifact_short_tall_candle.html"}}],
-    // ["artifact_closed_open_chips", "Form", {html: {include: "artifact_closed_open_chips.html"}}],
-    // ["artifact_straight_curved_curvedbridge", "Form", {html: {include: "artifact_straight_curved_curvedbridge.html"}}],
-    // ["artifact_closed_open_garagedoor", "Form", {html: {include: "artifact_closed_open_garagedoor.html"}}],
-    // ["artifact_plain_spotted_ladybug", "Form", {html: {include: "artifact_plain_spotted_ladybug.html"}}],
-    // ["artifact_thin_thick_marker", "Form", {html: {include: "artifact_thin_thick_marker.html"}}],
-    // ["artifact_short_long_noodle", "Form", {html: {include: "artifact_short_long_noodle.html"}}],
-    // ["artifact_straight_curved_palm", "Form", {html: {include: "artifact_straight_curved_palm.html"}}],
-    // ["artifact_plain_spotted_pillow", "Form", {html: {include: "artifact_plain_spotted_pillow.html"}}],
-    // ["artifact_plain_striped_shirt", "Form", {html: {include: "artifact_plain_striped_shirt.html"}}],
-    // ["artifact_smooth_bumpy_shoe", "Form", {html: {include: "artifact_smooth_bumpy_shoe.html"}}],
-    // ["artifact_small_big_snowman", "Form", {html: {include: "artifact_small_big_snowman.html"}}],
-    // ["artifact_narrow_wide_sofa", "Form", {html: {include: "artifact_narrow_wide_sofa.html"}}],
-    // ["artifact_smooth_bumpy_squash", "Form", {html: {include: "artifact_smooth_bumpy_squash.html"}}],
-    // ["artifact_short_tall_stack", "Form", {html: {include: "artifact_short_tall_stack.html"}}],
-    // ["artifact_straight_bent_straightrod", "Form", {html: {include: "artifact_straight_bent_straightrod.html"}}],
-    // ["artifact_short_long_table", "Form", {html: {include: "artifact_short_long_table.html"}}],
-    // ["artifact_thin_thick_thick", "Form", {html: {include: "artifact_thin_thick_thick.html"}}],
-    // ["artifact_empty_full_trash", "Form", {html: {include: "artifact_empty_full_trash.html"}}],
+    ["artifact_small_big_boat", "Form", {html: {include: "artifact_small_big_boat.html"}}],
+    ["artifact_narrow_wide_bridge", "Form", {html: {include: "artifact_narrow_wide_bridge.html"}}],
+    ["artifact_plain_striped_bw_stripe_fish", "Form", {html: {include: "artifact_plain_striped_bw_stripe_fish.html"}}],
+    ["artifact_short_tall_candle", "Form", {html: {include: "artifact_short_tall_candle.html"}}],
+    ["artifact_closed_open_chips", "Form", {html: {include: "artifact_closed_open_chips.html"}}],
+    ["artifact_straight_curved_curvedbridge", "Form", {html: {include: "artifact_straight_curved_curvedbridge.html"}}],
+    ["artifact_closed_open_garagedoor", "Form", {html: {include: "artifact_closed_open_garagedoor.html"}}],
+    ["artifact_plain_spotted_ladybug", "Form", {html: {include: "artifact_plain_spotted_ladybug.html"}}],
+    ["artifact_thin_thick_marker", "Form", {html: {include: "artifact_thin_thick_marker.html"}}],
+    ["artifact_short_long_noodle", "Form", {html: {include: "artifact_short_long_noodle.html"}}],
+    ["artifact_straight_curved_palm", "Form", {html: {include: "artifact_straight_curved_palm.html"}}],
+    ["artifact_plain_spotted_pillow", "Form", {html: {include: "artifact_plain_spotted_pillow.html"}}],
+    ["artifact_plain_striped_shirt", "Form", {html: {include: "artifact_plain_striped_shirt.html"}}],
+    ["artifact_smooth_bumpy_shoe", "Form", {html: {include: "artifact_smooth_bumpy_shoe.html"}}],
+    ["artifact_small_big_snowman", "Form", {html: {include: "artifact_small_big_snowman.html"}}],
+    ["artifact_narrow_wide_sofa", "Form", {html: {include: "artifact_narrow_wide_sofa.html"}}],
+    ["artifact_smooth_bumpy_squash", "Form", {html: {include: "artifact_smooth_bumpy_squash.html"}}],
+    ["artifact_short_tall_stack", "Form", {html: {include: "artifact_short_tall_stack.html"}}],
+    ["artifact_straight_bent_straightrod", "Form", {html: {include: "artifact_straight_bent_straightrod.html"}}],
+    ["artifact_short_long_table", "Form", {html: {include: "artifact_short_long_table.html"}}],
+    ["artifact_thin_thick_thick", "Form", {html: {include: "artifact_thin_thick_thick.html"}}],
+    ["artifact_empty_full_trash", "Form", {html: {include: "artifact_empty_full_trash.html"}}],
     ["shape_straight_bent_bent_bluearrow", "Form", {html: {include: "shape_straight_bent_bent_bluearrow.html"}}],
-    ["shape_straight_bent_bent_greenarrow", "Form", {html: {include: "shape_straight_bent_bent_greenarrow.html"}}]
-    // ["shape_small_big_big_redsquare", "Form", {html: {include: "shape_small_big_big_redsquare.html"}}],
-    // ["shape_small_big_big_yellowcircle", "Form", {html: {include: "shape_small_big_big_yellowcircle.html"}}],
-    // ["shape_smooth_bumpy_bumpy_bluesquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_bluesquare.html"}}],
-    // ["shape_smooth_bumpy_bumpy_redsquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_redsquare.html"}}],
-    // ["shape_straight_curved_curved_blueline", "Form", {html: {include: "shape_straight_curved_curved_blueline.html"}}],
-    // ["shape_straight_curved_curved_greenline", "Form", {html: {include: "shape_straight_curved_curved_greenline.html"}}],
-    // ["shape_empty_full_full_greencube", "Form", {html: {include: "shape_empty_full_full_greencube.html"}}],
-    // ["shape_empty_full_full_yellowcube", "Form", {html: {include: "shape_empty_full_full_yellowcube.html"}}],
-    // ["shape_short_long_long_greenarrow", "Form", {html: {include: "shape_short_long_long_greenarrow.html"}}],
-    // ["shape_short_long_long_greenline", "Form", {html: {include: "shape_short_long_long_greenline.html"}}],
-    // ["shape_closed_open_open_bluecircle", "Form", {html: {include: "shape_closed_open_open_bluecircle.html"}}],
-    // ["shape_closed_open_open_redtriangle", "Form", {html: {include: "shape_closed_open_open_redtriangle.html"}}],
-    // ["shape_plain_spotted_spotted_yellowcircle", "Form", {html: {include: "shape_plain_spotted_spotted_yellowcircle.html"}}],
-    // ["shape_plain_spotted_spotted_yellowsquare", "Form", {html: {include: "shape_plain_spotted_spotted_yellowsquare.html"}}],
-    // ["shape_plain_striped_stripedd_redcircle", "Form", {html: {include: "shape_plain_striped_stripedd_redcircle.html"}}],
-    // ["shape_plain_striped_stripedd_yellowsquare", "Form", {html: {include: "shape_plain_striped_stripedd_yellowsquare.html"}}],
-    // ["shape_short_tall_tall_greencylinder", "Form", {html: {include: "shape_short_tall_tall_greencylinder.html"}}],
-    // ["shape_short_tall_tall_greenspiral", "Form", {html: {include: "shape_short_tall_tall_greenspiral.html"}}],
-    // ["shape_thin_thick_thick_bluearrow", "Form", {html: {include: "shape_thin_thick_thick_bluearrow.html"}}],
-    // ["shape_thin_thick_thick_redarrow", "Form", {html: {include: "shape_thin_thick_thick_redarrow.html"}}],
-    // ["shape_narrow_wide_wide_greenoval", "Form", {html: {include: "shape_narrow_wide_wide_greenoval.html"}}],
-    // ["shape_narrow_wide_wide_redoval", "Form", {html: {include: "shape_narrow_wide_wide_redoval.html"}}]
-
-
-
-
+    ["shape_straight_bent_bent_greenarrow", "Form", {html: {include: "shape_straight_bent_bent_greenarrow.html"}}],
+    ["shape_small_big_big_redsquare", "Form", {html: {include: "shape_small_big_big_redsquare.html"}}],
+    ["shape_small_big_big_yellowcircle", "Form", {html: {include: "shape_small_big_big_yellowcircle.html"}}],
+    ["shape_smooth_bumpy_bumpy_bluesquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_bluesquare.html"}}],
+    ["shape_smooth_bumpy_bumpy_redsquare", "Form", {html: {include: "shape_smooth_bumpy_bumpy_redsquare.html"}}],
+    ["shape_straight_curved_curved_blueline", "Form", {html: {include: "shape_straight_curved_curved_blueline.html"}}],
+    ["shape_straight_curved_curved_greenline", "Form", {html: {include: "shape_straight_curved_curved_greenline.html"}}],
+    ["shape_empty_full_full_greencube", "Form", {html: {include: "shape_empty_full_full_greencube.html"}}],
+    ["shape_empty_full_full_yellowcube", "Form", {html: {include: "shape_empty_full_full_yellowcube.html"}}],
+    ["shape_short_long_long_greenarrow", "Form", {html: {include: "shape_short_long_long_greenarrow.html"}}],
+    ["shape_short_long_long_greenline", "Form", {html: {include: "shape_short_long_long_greenline.html"}}],
+    ["shape_closed_open_open_bluecircle", "Form", {html: {include: "shape_closed_open_open_bluecircle.html"}}],
+    ["shape_closed_open_open_redtriangle", "Form", {html: {include: "shape_closed_open_open_redtriangle.html"}}],
+    ["shape_plain_spotted_spotted_yellowcircle", "Form", {html: {include: "shape_plain_spotted_spotted_yellowcircle.html"}}],
+    ["shape_plain_spotted_spotted_yellowsquare", "Form", {html: {include: "shape_plain_spotted_spotted_yellowsquare.html"}}],
+    ["shape_plain_striped_stripedd_redcircle", "Form", {html: {include: "shape_plain_striped_stripedd_redcircle.html"}}],
+    ["shape_plain_striped_stripedd_yellowsquare", "Form", {html: {include: "shape_plain_striped_stripedd_yellowsquare.html"}}],
+    ["shape_short_tall_tall_greencylinder", "Form", {html: {include: "shape_short_tall_tall_greencylinder.html"}}],
+    ["shape_short_tall_tall_greenspiral", "Form", {html: {include: "shape_short_tall_tall_greenspiral.html"}}],
+    ["shape_thin_thick_thick_bluearrow", "Form", {html: {include: "shape_thin_thick_thick_bluearrow.html"}}],
+    ["shape_thin_thick_thick_redarrow", "Form", {html: {include: "shape_thin_thick_thick_redarrow.html"}}],
+    ["shape_narrow_wide_wide_greenoval", "Form", {html: {include: "shape_narrow_wide_wide_greenoval.html"}}],
+    ["shape_narrow_wide_wide_redoval", "Form", {html: {include: "shape_narrow_wide_wide_redoval.html"}}]
  ];
+
+
 
 
 
