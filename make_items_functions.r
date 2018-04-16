@@ -47,9 +47,9 @@ fill_template <- function(item, out_dir){
   template <- paste(readLines("item_template.html"), collapse="\n") 
   slots <- item_to_slots(item)
   template_filled <- inject_html(item, slots, template)
-  if (!is.null(out_dir)){
+  # TODO -- clean up this too (also not that important)
+  if (!is.na(out_dir))
     writeLines(unlist(strsplit(template_filled, split="\n")), outfile)
-  }
   if (file.exists(outfile)){
     message(outfile, " created") 
   } else message("creation of ", outfile, " failed")

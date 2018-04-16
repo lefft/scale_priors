@@ -18,6 +18,7 @@ source("make_items_functions.r")
 
 
 
+
 ### input files + paths -------------------------------------------------------
 
 # the location on disk where we'll read image filenames from 
@@ -26,6 +27,7 @@ img_path <- file.path("/Users","timothyleffel","Google Drive",
 
 # subfolders of `img_path` holding the relevant images 
 img_types <- c("artifact", "shape")
+
 
 
 
@@ -39,13 +41,14 @@ item_html_out_dir <- "chunk_includes" # "chunk_includes_dev"
 
 
 
+
 ### read in + organize item info ----------------------------------------------
 
 # read in hand-specified item info/attributes
 # sapply(item_info, table, useNA="ifany"); head(item_info)
-item_nouns <- read.csv("img_nouns.csv", comment.char="#", as.is=TRUE)
-item_adjs <- read.csv("img_adjs.csv", comment.char="#", as.is=TRUE)
-item_info <- left_join(item_adjs, item_nouns, by="img_group")
+item_info <- left_join(
+  read.csv("img_adjs.csv", comment.char="#", as.is=TRUE),
+  read.csv("img_nouns.csv", comment.char="#", as.is=TRUE), by="img_group")
 
 
 # build a df with item info and urls where each image is hosted 
@@ -63,16 +66,19 @@ item_elements <- img_types %>%
   mutate(group_id = paste(img_type, adjs, img_group, sep="_"))
 
 
-# inspect the item attributes (check appropriate n's -- exactly 2 apiece)
+# inspect item attributes (check appropriate n's -- shd be exactly 2 apiece)
 item_elements %>% group_by(adjs, rel_abs) %>% summarize(
-  n_conds = lu(img_type)) %>% 
+  n_conds = lu(img_type),
+  n_groups = lu(group_id)) %>% 
+  ungroup() %>% 
   arrange(desc(n_conds)) %>% 
   print(n=nrow(.))
 
 
-# organize item attributes in a data frame
+# organize item attributes in a data frame 
+# items %>% glimpse
 items <- item_elements %>% select(-group_element, -img, -img_id) %>% unique
-items %>% glimpse
+
 
 
 
@@ -82,25 +88,26 @@ items %>% glimpse
 # output is an html file with appropriate links and boilerplate text 
 
 # NOTE: the resulting matrix is not really used for anything
-ibex_setup_grid <- do.call(rbind, sapply(1:nrow(items), function(idx){
+ibex_setup_grid <- do.call(rbind, sapply(seq_len(nrow(items)), function(idx){
   fill_template(items[idx, ], out_dir=item_html_out_dir)}))
+
 
 
 
 ### generate quasi-json structure for each item -------------------------------
 
-# NOTE: we need a set of quasi-json objects, one for each item. like this:
-# ["artifact_empty_full_beer", "Form", 
-#  {html: 
-#    {include: 
-#      "artifact_empty_full_beer.html"}}],
-
 # generate each item's (quasi-)json representation, to put in ibex data js
-sapply(1:nrow(items), function(idx){
+sapply(seq_len(nrow(items)), function(idx){
   make_ibex_item_json(items[idx, ], path_from_chunk_includes="")}) %>% 
   paste(collapse="\n\t") %>% 
   paste0("{\n\t", ., "\n}") %>% 
   writeLines(items_json_outname)
+
+# NOTE: just built a set of quasi-json objects, one for each item. like this:
+# ["artifact_empty_full_beer", "Form", 
+#  {html: 
+#    {include: 
+#      "artifact_empty_full_beer.html"}}],
 
 
 
