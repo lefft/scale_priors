@@ -30,14 +30,15 @@
     <h2>Demographic Questionnaire</h2>
 
     <p>
-      Please answer the questions below.<br>
-      After you complete the questionnaire, you will enter your Amazon Worker ID and a receive a unique identifier so that we can compensate you for time. <br>
+      Please answer the questions below.
+    </p>
+    <p>
+      After you complete the questionnaire, you will enter your Amazon Worker ID and a receive a unique identifier so that we can compensate you for time.
+    </p>
+    <p>
       Thanks!
     </p>
 
-    <p>
-      <b>After submitting, please wait until the results are sent to the server (you'll see a message once they're sent).</b>
-    </p>
     <br>
     
     <table>
@@ -50,6 +51,7 @@
         <tr>
           <td colspan="2"><label class="error" for="age"></label><hr></td>
         </tr>
+
         <!-- SEX QUESTION -->
         <tr>
           <td>What is your sex?</td>
@@ -62,14 +64,7 @@
         <tr>
           <td colspan="2"><label class="error" for="sex"></label><hr></td>
         </tr>
-        <!-- NATIVE LANGUAGE QUESTION -->
-        <tr>
-          <td>What is your native language?</td>
-          <td><input name="lang" type="text" class="obligatory" size="30"></td>
-        </tr>
-        <tr>
-          <td colspan="2"><label class="error" for="lang"></label><hr></td>
-        </tr>
+
         <!-- HOME STATE QUESTION -->
         <tr>
           <td>If you grew up in the USA, what state did you grow up in?<br> (you can type "none")</td>
@@ -77,6 +72,24 @@
         </tr>
         <tr>
           <td colspan="2"><label class="error" for="state"></label><hr></td>
+        </tr>
+
+        <!-- NATIVE LANGUAGE QUESTION -->
+        <tr>
+          <td>What is your native language?<br>(the first language you learned)</td>
+          <td><input name="native_lang" type="text" class="obligatory" size="30"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label class="error" for="native_lang"></label><hr></td>
+        </tr>
+
+        <!-- OTHER LANGS QUESTION -->
+        <tr>
+          <td>Did you grow up speaking any languages other than English?<br>(and if so, which one(s)?)</td>
+          <td><input name="other_langs" type="text" size="30" class="obligatory"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label class="error" for="other_langs"></label><hr></td>
         </tr>
 
       </tbody>

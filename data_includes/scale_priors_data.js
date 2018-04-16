@@ -1,4 +1,4 @@
-var shuffleSequence = seq("intro", rshuffle(startsWith("shape_"), rshuffle(startsWith("artifact_"))), 'questionnaire', 'exit');
+var shuffleSequence = seq('consent', 'intro', rshuffle(startsWith('shape_'), rshuffle(startsWith('artifact_'))), 'questionnaire', 'exit');
 
 var practiceItemTypes = ["practice"];
 
@@ -63,8 +63,10 @@ var items = [
     ["sep", "Separator", { }],
     ["sepFB", "Separator", {normalMessage:"Correct",errorMessage:"Wrong",transfer:1500,ignoreFailure:false}],
 
-    // NOTE: You could also use the 'Message' controller for the experiment intro 
-    // (this provides a simple consent checkbox).
+    ["consent", "Form", {
+        consentRequired: true,
+        html: {include: "consent.html"}
+    }],
 
     ["intro", "Form", {
         html: {include: "instructions.html"},
